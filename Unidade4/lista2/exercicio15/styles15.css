@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #f4f7f6;
+}
+
+.valor {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
