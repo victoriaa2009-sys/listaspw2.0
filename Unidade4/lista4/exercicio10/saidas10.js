@@ -7,7 +7,7 @@ cálculo para novos valores de entrada todas as vezes que desejar.
 var repetir = true;
 
 while (repetir) {
-    var hora24 = prompt("Digite a hora no formato 24 horas (HH:MM):");
+    var hora24 = prompt("Digite a hora (HH:MM):");
     var partes = hora24.split(":");
     var hora = parseInt(partes[0]);
     var minuto = partes[1];
@@ -23,6 +23,4 @@ while (repetir) {
     }
 
     alert("Hora no formato 12 horas: " + hora + ":" + minuto + " " + periodo);
-
-    repetir = confirm("Deseja converter outra hora?");
 }   

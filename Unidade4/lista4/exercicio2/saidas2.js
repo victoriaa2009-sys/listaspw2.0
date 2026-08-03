@@ -7,7 +7,7 @@ calcularIdadeNoFuturo("Maria", 17, 10); // "Maria terá 27 anos daqui a 10 anos!
 
 function calcularIdadeNoFuturo(nome, idadeAtual, anosFuturos) {
     var idadeFutura = idadeAtual + anosFuturos;
-    return nome + " terá " + idadeFutura + " anos daqui a " + anosFuturos + " anos!";
+    return nome + " terá " + idadeFutura + " anos daqui a " + anosFuturos + " anos";
 }
 
 var nome = prompt("Digite o nome da pessoa:");

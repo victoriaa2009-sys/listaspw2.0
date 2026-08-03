@@ -11,44 +11,75 @@ dois arrays (um vazio e outro com alguns elementos) e testar (comprovar) o
 funcionamento de cada uma das funções.
 */
 
-function isArrayEmpty(array) {
-    return array.length === 0;
+function estaVazio(vetor) {
+    if (vetor.length === 0) {
+        return true;
+    }
+    return false;
 }
 
-function getMaxValue(array) {
-    if (array.length === 0) {
+function maiorValor(vetor) {
+    if (vetor.length === 0) {
         return -1;
     }
-    return Math.max(...array);
+
+    let maior = vetor[0];
+
+    for (let i = 1; i < vetor.length; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i];
+        }
+    }
+
+    return maior;
 }
 
-function getMinValue(array) {
-    if (array.length === 0) {
+function menorValor(vetor) {
+    if (vetor.length === 0) {
         return -1;
     }
-    return Math.min(...array);
+
+    let menor = vetor[0];
+
+    for (let i = 1; i < vetor.length; i++) {
+        if (vetor[i] < menor) {
+            menor = vetor[i];
+        }
+    }
+
+    return menor;
 }
 
-function getAverageValue(array) {
-    if (array.length === 0) {
+function valorMedio(vetor) {
+    if (vetor.length === 0) {
         return -1;
     }
-    var sum = array.reduce((acc, val) => acc + val, 0);
-    return sum / array.length;
+
+    let soma = 0;
+
+    for (let i = 0; i < vetor.length; i++) {
+        soma = soma + vetor[i];
+    }
+
+    return soma / vetor.length;
 }
 
-// Testando as funções com arrays
-var emptyArray = [];
-var filledArray = [10, 20, 30, 40, 50];
+let vetorVazio = [];
+let vetorNumeros = [];
+for (let i = 0; i < 5; i++) {
+    vetorNumeros.push(parseFloat(prompt("Digite um número:")));
+}
 
-console.log("Array vazio está vazio?", isArrayEmpty(emptyArray)); // true
-console.log("Array preenchido está vazio?", isArrayEmpty(filledArray)); // false
+console.log("Array vazio:");
+console.log("Está vazio?", estaVazio(vetorVazio));
+console.log("Maior valor:", maiorValor(vetorVazio));
+console.log("Menor valor:", menorValor(vetorVazio));
+console.log("Valor médio:", valorMedio(vetorVazio));
 
-console.log("Maior valor do array vazio:", getMaxValue(emptyArray)); // -1
-console.log("Maior valor do array preenchido:", getMaxValue(filledArray)); // 50
+console.log("");
 
-console.log("Menor valor do array vazio:", getMinValue(emptyArray)); // -1
-console.log("Menor valor do array preenchido:", getMinValue(filledArray)); // 10
-
-console.log("Valor médio do array vazio:", getAverageValue(emptyArray)); // -1
-console.log("Valor médio do array preenchido:", getAverageValue(filledArray)); // 30    
+console.log("Array com elementos:");
+console.log("Está vazio?", estaVazio(vetorNumeros));
+console.log("Maior valor:", maiorValor(vetorNumeros));
+console.log("Menor valor:", menorValor(vetorNumeros));
+console.log("Valor médio:", valorMedio(vetorNumeros));

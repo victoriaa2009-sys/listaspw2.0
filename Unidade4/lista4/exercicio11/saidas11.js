@@ -12,7 +12,7 @@ function dataPorExtenso(data) {
 
     const partes = data.split("/");
     const dia = parseInt(partes[0]);
-    const mes = parseInt(partes[1]) - 1; // Ajuste para índice do array
+    const mes = parseInt(partes[1]) - 1; 
     const ano = parseInt(partes[2]);
 
     if (ano < 2000 || ano > 2100) {

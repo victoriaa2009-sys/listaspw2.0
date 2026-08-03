@@ -5,26 +5,19 @@ aleatória. Padronize sua função para que todos os caracteres sejam devolvidos
 alta ou caixa baixa, independentemente de como foram digitados. 
 */
 
-function embaralharString(str) {
-    // Converte a string para caixa baixa
-    str = str.toLowerCase();
+function embaralharTexto(texto) {
+    texto = texto.toLowerCase();
 
-    // Converte a string em um array de caracteres
-    let arr = str.split('');
+    let letras = texto.split("");
 
-    // Embaralha o array usando o algoritmo de Fisher-Yates
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+    for (let i = 0; i < letras.length; i++) {
+        let indiceAleatorio = Math.floor(Math.random() * letras.length);
+
+        let temp = letras[i];
+        letras[i] = letras[indiceAleatorio];
+        letras[indiceAleatorio] = temp;
     }
 
-    // Converte o array de volta para uma string e retorna
-    return arr.join('');
+    return letras.join("");
 }
-
-// Solicita ao usuário que digite uma string
-var inputString = prompt("Digite uma string para embaralhar:");
-
-// Chama a função e exibe o resultado
-var resultado = embaralharString(inputString);
-alert("String embaralhada: " + resultado);  
+console.log(embaralharTexto(prompt("Digite um texto para embaralhar:")));

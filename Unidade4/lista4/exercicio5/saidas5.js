@@ -8,23 +8,12 @@ traduzirGiria("Estou muito feliz hoje"); // "Tô mt felizona hoje"
 */
 
 function traduzirGiria(frase) {
-    var gírias = {
-        "estou": "tô",
-        "muito": "mt",
-        "feliz": "felizona",
-        "hoje": "hj",
-        "legal": "da hora",
-        "dinheiro": "grana"
-    };
-
-    for (var palavra in gírias) {
-        var regex = new RegExp("\\b" + palavra + "\\b", "gi");
-        frase = frase.replace(regex, gírias[palavra]);
-    }
-
+    frase = frase.replace("estou", "Tô");
+    frase = frase.replace("muito", "mt");
+    frase = frase.replace("feliz", "felizona");
     return frase;
 }
 
-var fraseOriginal = prompt("Digite uma frase com gírias da internet:");
-
-alert("Frase traduzida: " + traduzirGiria(fraseOriginal));    
+frase = prompt("Digite uma frase:");
+const fraseTraduzida = traduzirGiria(frase);
+alert("Frase traduzida: " + fraseTraduzida);

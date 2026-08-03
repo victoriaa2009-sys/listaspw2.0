@@ -5,9 +5,15 @@ mil duzentos e cinquenta e um reais e noventa centavos”.
 */
 
 function numeroPorExtenso(valor) {
-    const unidades = ["", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"];
-    const dezenas = ["", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
-    const centenas = ["", "cem", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
+    const unidades = [
+        "", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"
+    ];
+    const dezenas = [
+        "", "", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"
+    ];
+    const centenas = [
+        "", "cem", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"
+    ];
 
     let [reais, centavos] = valor.toFixed(2).split(".");
     reais = parseInt(reais);

@@ -6,11 +6,11 @@ gerarNomeDeJogador("Lucas"); // "Lucas_99xX"
 */
 
 function gerarNomeDeJogador(nome) {
-    const numeros = Math.floor(Math.random() * 100); // Gera um número aleatório de 0 a 99
+    const numeros = Math.floor(Math.random() * 100); 
     const simbolos = ["_", "-", "xX", "Xx", "!", "@", "#", "$"];
     const simboloAleatorio = simbolos[Math.floor(Math.random() * simbolos.length)];
     
-    return `${nome}${simboloAleatorio}${numeros}`;
+    return nome + numeroAleatorio + simboloAleatorio;
 }
 
 var nomeInput = prompt("Digite um nome:");

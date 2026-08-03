@@ -7,9 +7,12 @@ verdadeOuMentira("Javascript é uma linguagem de programação"); // "Verdade!"
 */
 
 function verdadeOuMentira(frase) {
-    const resultado = Math.random() < 0.5 ? "Verdade!" : "Mentira!";
-    return resultado;
+    let sorteio = Math.floor(Math.random() * 2);
+    if (sorteio === 0) {
+        return "Mentira!";
+    } else {
+        return "Verdade!";
+    }
 }
-
-var fraseInput = prompt("Digite uma frase para verificar se é verdade ou mentira:");
-alert(verdadeOuMentira(fraseInput));    
+var frase = prompt("Digite uma frase para verificar se é verdade ou mentira:");
+alert(verdadeOuMentira(frase));

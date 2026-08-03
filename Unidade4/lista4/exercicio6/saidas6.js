@@ -4,7 +4,7 @@ e exibir o resultado na tela.
 */
 
 function calcularVolumeCilindro(altura, raio) {
-    var volume = Math.PI * Math.pow(raio, 2) * altura;
+    var volume = 3 * (raio * raio) * altura;// 3 é uma aproximação de pi
     return volume;
 }
 
