@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link href="eventos.css" rel="stylesheet">
+</head>
+<!--2 – Utilizando como base o arquivo HTML do exercício 2 (eventos-exer02.html), programe
+um script para multiplicar o número do input de cima por 2 e colocar o resultado no input
+de baixo.-->
+<body>
+    <div class="form-container">
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" />
+        <br />
+        <button id="botao">
+            Multiplica por 2
+        </button>
+        <br />
+        <label for="resultado">Resultado:</label>
+        <input type="text" id="resultado" name="resultado" />
+    </div>
+  <script>
+    const numeroInput = document.getElementById('numero');
+    const resultadoInput = document.getElementById('resultado');
+    const botao = document.getElementById('botao');
+
+    botao.addEventListener('click', () => {
+        const numero = parseFloat(numeroInput.value);
+        resultadoInput.value = numero * 2;
+    });
+  </script>
+</body>
+
+</html>

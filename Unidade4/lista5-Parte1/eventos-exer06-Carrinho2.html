@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .cart-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .product input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+        }
+        .frete-container {
+            margin-top: 20px;
+        }
+        .total-container {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .total-container span {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>Carrinho de Compras</h2>
+        <div class="product">
+            <span>Produto 1</span>
+            <input type="number" id="qtd1" value="0" min="0">
+            <span>R$ 10,00</span>
+        </div>
+        <div class="product">
+            <span>Produto 2</span>
+            <input type="number" id="qtd2" value="0" min="0">
+            <span>R$ 20,00</span>
+        </div>
+        <div class="product">
+            <span>Produto 3</span>
+            <input type="number" id="qtd3" value="0" min="0">
+            <span>R$ 15,00</span>
+        </div>
+        <div class="frete-container">
+            <span>CEP para Frete</span>
+            <input type="text" id="cep" placeholder="Digite o CEP" maxlength="8">
+        </div>
+        <div class="frete-container">
+            <span>Frete: R$ </span><span id="frete">0,00</span>
+        </div>
+        <button id="calcular">Calcular Total</button>
+        <div class="total-container">
+            <span>Total: R$ </span><span id="total">0,00</span>
+        </div>
+    </div>
+
+    <script>
+        const qtd1Input = document.getElementById('qtd1');
+        const qtd2Input = document.getElementById('qtd2');
+        const qtd3Input = document.getElementById('qtd3');
+        const totalSpan = document.getElementById('total');
+        const calcularButton = document.getElementById('calcular');
+        const freteSpan = document.getElementById('frete');
+        const cepInput = document.getElementById('cep');
+
+        calcularButton.addEventListener('click', function(){
+            const preco1 = 10;
+            const preco2 = 20;
+            const preco3 = 15;
+
+            const quantidade1 = parseInt(qtd1Input.value) || 0;
+            const quantidade2 = parseInt(qtd2Input.value) || 0;
+            const quantidade3 = parseInt(qtd3Input.value) || 0;
+
+            let totalProdutos = (quantidade1 * preco1) + (quantidade2 * preco2) + (quantidade3 * preco3);
+            let frete = 0;
+
+            switch (cepInput.value.trim()) {
+                case '88320000':
+                    frete = 10; 
+                    break;
+                case '88495000':
+                    frete = 15; 
+                    break;
+                case '88780000': 
+                    frete = 20; 
+                    break;
+                default:
+                    frete = 0;
+            }
+
+            freteSpan.textContent = frete.toFixed(2).replace('.', ',');
+            totalSpan.textContent = (totalProdutos + frete).toFixed(2).replace('.', ',');
+        });
+    </script>
+</body>
+</html>

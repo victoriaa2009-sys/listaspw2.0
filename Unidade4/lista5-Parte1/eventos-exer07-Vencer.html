@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link href="eventos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--7 – Faça o jogo “Clique para Vencer!”, peça ao professor para demonstrar o jogo em
+funcionamento (arquivo base: eventos-exer07-Vencer.html).-->
+    <div class="form-container">
+        <h2>Jogo Clique para Vencer!</h2>
+
+        <button id="botao1">
+            Clique aqui para VENCER!
+        </button>
+        <button id="botao2">
+            Clique aqui para PERDER!
+        </button>
+    </div>
+    <script>
+        const botao1 = document.getElementById('botao1');
+        const botao2 = document.getElementById('botao2');
+
+        botao1.addEventListener('click', () => {
+            alert('Você venceu!');
+        });
+
+        botao2.addEventListener('click', () => {
+            alert('Você perdeu!');
+        });
+    </script>
+</body>
+
+</html>

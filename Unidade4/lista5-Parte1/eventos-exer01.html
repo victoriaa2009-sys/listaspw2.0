@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Origem e Destino</title>
+    <link href="eventos.css" rel="stylesheet">
+</head>
+<!--1 – Utilizando como base o arquivo HTML do exercício 1 (eventos-exer01.html), faça um
+script para copiar o conteúdo do input de cima para o de baixo.-->
+<body>
+    <div class="form-container">
+        <label for="origem">Origem:</label>
+        <input type="text" id="origem" placeholder="Origem">
+        <button id="copiar" type="submit">Copiar</button>
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino" placeholder="Destino">
+    </div>
+  <script>
+    const origemInput = document.getElementById('origem');
+    const destinoInput = document.getElementById('destino');
+    const copiarButton = document.getElementById('copiar');
+
+    copiarButton.addEventListener('click', () => {
+        destinoInput.value = origemInput.value;
+    });   
+    </script>      
+</body>
+
+</html>

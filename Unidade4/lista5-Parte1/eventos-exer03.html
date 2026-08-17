@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Origem e Destino</title>
+    <link href="eventos.css" rel="stylesheet">
+</head>
+<!--3 – Faça um script para somar o “Número 1” com o “Número 2” e colocar o resultado no
+input de baixo (arquivo base: eventos-exer03.html).
+4 – Utilizando como base o arquivo do exercício anterior, adicione mais 3 botões e
+implemente rotinas para subtrair, multiplicar e dividir.-->
+<body>
+    <div class="form-container">
+        <label for="n1">Número 1:</label>
+        <input type="text" id="n1">
+        <label for="n2">Número 2:</label>
+        <input type="text" id="n2">
+        <button id="botao" type="submit">Somar</button>
+        <button id="botaoSubtrair" type="submit">Subtrair</button>
+        <button id="botaoMultiplicar" type="submit">Multiplicar</button>
+        <button id="botaoDividir" type="submit">Dividir</button>
+        <label for="result">Resultado:</label>
+        <input type="text" id="result">
+    </div>
+    <script>
+        const n1Input = document.getElementById('n1');
+        const n2Input = document.getElementById('n2');
+        const resultInput = document.getElementById('result');
+        const botao = document.getElementById('botao');
+
+        botao.addEventListener('click', () => {
+            const n1 = parseFloat(n1Input.value);
+            const n2 = parseFloat(n2Input.value);
+            resultInput.value = n1 + n2;
+        });
+    </script>
+</body>
+
+</html>
