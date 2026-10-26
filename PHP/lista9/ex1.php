@@ -6,6 +6,7 @@
     <title>Exercício 1</title>
 </head>
 <body>
+    
     <ul>
         <?php
             $inventario = array("Espada", "Poção de Vida", "Escudo");
